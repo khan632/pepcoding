@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int temp = n;
+        int k = scn.nextInt();
+        //count the digits
+        int count = 0;
+        while (temp != 0) {
+            count++;
+            temp /= 10;
+        }
+        //rotation in range
+        k = k % count;
+
+        if (k < 0) {
+            k += count;
+        }
+        //calculate mul and div
+        int div=(int)Math.pow(10,(k));
+        int mul=(int)Math.pow(10,(count-k));
+        
+        int qu=n/div;
+        int rm=n%div;
+        
+        //print
+        System.out.println(rm*mul+qu);
+
+    }
+}
