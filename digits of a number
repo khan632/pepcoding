@@ -1,0 +1,62 @@
+========================================//Digits Of A Number\\=============================================================================
+QUESTION
+  1. You've to display the digits of a number.
+    2. Take as input "n", the number for which digits have to be displayed.
+    3. Print the digits of the number line-wise
+                               
+                               
+INPUT FORMAT
+"n" where n is any integer.
+
+OUTPUT FORMAT
+d1
+    d2
+    d3
+    ... digits of the number
+Constraints
+1 <= n < 10^9
+
+SAMPLE INPUT
+65784383
+
+SAMPLE OUTPUT
+6
+5
+7
+8
+4
+3
+8
+3
+======================================================//SOLUTION\\======================================================================
+
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // write your code here 
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int temp=n;
+        int count=0;
+        while (temp != 0) {
+          //  System.out.print(n / pow);
+        //    n = n % pow;
+          //  pow /= 10;
+          count++;
+          temp/=10;
+        }
+        
+        int pow=(int)Math.pow(10,(count-1));
+        
+        while(count!=0)
+        {
+            System.out.println(n/pow);
+            n=n%pow;
+            pow/=10;
+            count--;
+        }
+
+    }
+}
