@@ -1,0 +1,22 @@
+import java.util.*;
+    
+    public class Main{
+    
+    public static void main(String[] args) {
+      // write your code here
+      Scanner scn=new Scanner(System.in);
+      int first=scn.nextInt();
+      int second=scn.nextInt();
+      int rem;
+      int n1=first;
+      int n2=second;
+      while(first!=0)
+      {
+          rem=second%first;
+          second=first;
+          first=rem;
+      }
+      System.out.println(second);
+      System.out.println((n1*n2)/second);
+     }
+    }
